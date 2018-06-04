@@ -1,5 +1,6 @@
 
-const Converter =  require('../../../module/device-protocol-converter-jh');
+const Converter = require('device-protocol-converter-jh');
+// const Converter = require('../../../module/device-protocol-converter-jh');
 let keyInfo = Converter.BaseModel.Inverter.BASE_KEY;
 
 /**
