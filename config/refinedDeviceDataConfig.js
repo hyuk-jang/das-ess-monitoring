@@ -1,6 +1,6 @@
 
 const Converter = require('device-protocol-converter-jh');
-// const Converter = require('../../../module/device-protocol-converter-jh');
+// const Converter = require('../../device-protocol-converter-jh');
 let keyInfo = Converter.BaseModel.ESS.BASE_KEY;
 
 /**
@@ -37,6 +37,11 @@ module.exports = [{
       calculate: 1,
       toFixed: 3
     }, {
+      fromKey: keyInfo.pvKwh,
+      toKey: 'in_total_kwh',
+      calculate: 1,
+      toFixed: 3
+    }, {
       fromKey: keyInfo.gridRAmp,
       toKey: 'out_a',
       // calculate: 10,
@@ -51,16 +56,9 @@ module.exports = [{
       toKey: 'out_kw',
       calculate: 1,
       toFixed: 3
-    },
-    // {
-    //   fromKey: keyInfo.powerDailyKwh,
-    //   toKey: 'd_wh',
-    //   calculate: 10000,
-    //   toFixed: 0
-    // },
-    {
+    },{
       fromKey: keyInfo.powerTotalKwh,
-      toKey: 'c_kwh',
+      toKey: 'out_total_kwh',
       calculate: 1,
       toFixed: 3
     },

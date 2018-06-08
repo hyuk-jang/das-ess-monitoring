@@ -76,7 +76,7 @@ class Control {
           current: addObj
         });
       });
-  
+
       this.config.deviceControllerList = returnValue;
     }
 
