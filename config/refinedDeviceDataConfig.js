@@ -37,11 +37,6 @@ module.exports = [{
       calculate: 1,
       toFixed: 3
     }, {
-      fromKey: keyInfo.pvKwh,
-      toKey: 'in_total_kwh',
-      calculate: 1,
-      toFixed: 3
-    }, {
       fromKey: keyInfo.gridRAmp,
       toKey: 'out_a',
       // calculate: 10,
@@ -97,8 +92,8 @@ module.exports = [{
       calculate: 1,
       toFixed: 3
     },{
-      fromKey: keyInfo.batteryTotalDischargingKw,
-      toKey: 'battery_total_discharging_kwh',
+      fromKey: keyInfo.totalPVGeneratingPowerKwh,
+      toKey: 'total_pv_generating_kwh',
       calculate: 1,
       toFixed: 3
     },{

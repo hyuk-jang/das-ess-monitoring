@@ -15,8 +15,9 @@ const moment = require('moment');
 const DeviceController = require('../DeviceController');
 
 class Control {
-  /** @param {config=} config */
-  constructor(config) {
+  /** @param {config=}  */
+  constructor() {
+    // this.config = _.get(config, 'current', {});
     this.config = _.get(config, 'current', {});
 
     // 장치를 계측하기 위한 스케줄러 객체
@@ -140,6 +141,9 @@ class Control {
 
   // Cron 구동시킬 시간
   runCronMeasure() {
+    // this.measureDate = moment();
+    // this.measureRegularDevice();
+
     try {
       if (this.cronScheduler !== null) {
         // BU.CLI('Stop')
@@ -175,7 +179,7 @@ class Control {
     
     // 모든 장치에 계측 명령 요청
     this.deviceControllerList.forEach(deviceController => {
-      let commandInfoList = deviceController.converter.generationCommand(deviceController.baseModel.BASE.DEFAULT.COMMAND.STATUS);
+      let commandInfoList = deviceController.converter.generationCommand(deviceController.baseModel.device.DEFAULT.COMMAND.STATUS);
       deviceController.orderOperation(commandInfoList);
     });
 
